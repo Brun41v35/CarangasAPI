@@ -10,7 +10,7 @@ import Foundation
 
 class Car: Codable {
     
-    var id: String
+    var _id: String
     var brand: String
     var gasType: Int
     var name: String

@@ -8,7 +8,17 @@
 
 import Foundation
 
+enum CarError {
+    case url
+    case taskError(error: Error)
+    case noRespose
+    case noData
+    case responseStatusCode(code: Int)
+    case invalidJson
+}
+
 class RESt {
+    
     private static let basePath = "https://carangas.herokuapp.com/cars"
     
     // Criando uma closure
@@ -21,11 +31,14 @@ class RESt {
         return config
     }()
     
-    // Criando uma sessoa
+    // Criando uma sessao
     private static let session = URLSession(configuration: configuration)
     
-    class func loadCars() {
-        guard let url = URL(string: basePath) else {return}
+    class func loadCars(onComplete: @escaping ([Car]) -> Void, onError: @escaping (CarError) -> Void) {
+        guard let url = URL(string: basePath) else {
+            onError(.url)
+            return
+        }
         
         //Para fazer uma requisicao, e necessario criar uma tarefa. Abaixo e criado uma tarefa.
         //Informacoes da Closure
@@ -42,22 +55,26 @@ class RESt {
                 
                 //Estou tratando o response com HTTPURLResponse. Atraves disso, tenho acesso as respostas do servidor (200...504)
                 guard let response = response as? HTTPURLResponse else {return}
+                onError(.noRespose)
+                
+                
                 if response.statusCode == 200 {
                     guard let data = data else {return}
                     do {
                         let cars = try JSONDecoder().decode([Car].self, from: data)
-                        for car in cars {
-                            print(car.name, car.brand)
-                        }
+                        onComplete(cars)
                     } catch {
-                        
+                        print(error.localizedDescription)
+                        onError(.invalidJson)
                     }
+                    
                 } else {
                     print("Alguma coisa esta errada...")
+                    onError(.responseStatusCode(code: response.statusCode))
                 }
                 
             } else {
-                print(error!)
+                onError(.taskError(error: error!))
             }
         }
         //O metodo RESUME e quem faz a solicitacao para o servidor

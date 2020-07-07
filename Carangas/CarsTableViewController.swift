@@ -29,6 +29,13 @@ class CarsTableViewController: UITableViewController {
             print(error)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewSegue" {
+            let vc = segue.destination as! CarViewController
+            vc.car = cars[tableView.indexPathForSelectedRow!.row]
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -60,18 +67,25 @@ class CarsTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            
+            //Recuperando o carro
+            let car = cars[indexPath.row]
+            
+            RESt.delete(car: car, onComplete: {(sucess) in
+                if sucess {
+                    
+                    self.cars.remove(at: indexPath.row)
+                    
+                    DispatchQueue.main.async {
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                }
+            })
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.

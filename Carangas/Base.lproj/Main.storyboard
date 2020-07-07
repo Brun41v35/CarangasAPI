@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Carangas-->
+        <!--The Cars-->
         <scene sceneID="k9p-9K-xAC">
             <objects>
                 <tableViewController id="HMz-Le-Zf7" customClass="CarsTableViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                             <outlet property="delegate" destination="HMz-Le-Zf7" id="5Ah-ey-Bcx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Carangas" id="qEi-1J-Fj0">
+                    <navigationItem key="navigationItem" title="The Cars" id="qEi-1J-Fj0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tSI-m7-DTr">
                             <connections>
                                 <segue destination="grR-Sl-Z0I" kind="show" identifier="addSegue" id="Unn-qu-cRI"/>
@@ -192,7 +192,7 @@
             </objects>
             <point key="canvasLocation" x="1294" y="-229"/>
         </scene>
-        <!--Caranga-->
+        <!--The Cars-->
         <scene sceneID="hLQ-ad-v7b">
             <objects>
                 <viewController id="FpI-Sy-Esc" customClass="CarViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
@@ -226,7 +226,7 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-AR-NOQ">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-AR-NOQ">
                                 <rect key="frame" x="169" y="423.5" width="37" height="37"/>
                                 <color key="color" name="main"/>
                             </activityIndicatorView>
@@ -251,7 +251,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hc8-xg-B67"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Caranga" id="aNu-ZF-NS2">
+                    <navigationItem key="navigationItem" title="The Cars" id="aNu-ZF-NS2">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="9Jx-R4-Nab">
                             <connections>
                                 <segue destination="grR-Sl-Z0I" kind="show" id="kKk-qI-2Ya"/>

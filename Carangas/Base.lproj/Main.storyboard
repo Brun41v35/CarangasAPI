@@ -218,16 +218,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-qh-puF">
+                                <rect key="frame" x="0.0" y="217" width="375" height="450"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-AR-NOQ">
+                                <rect key="frame" x="169" y="423.5" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="h0W-xz-8b0" secondAttribute="trailing" constant="16" id="9Xd-oH-OSQ"/>
                             <constraint firstItem="M2w-Q0-H2V" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="CRT-Gh-Xd2"/>
+                            <constraint firstItem="uVl-qh-puF" firstAttribute="top" secondItem="M2w-Q0-H2V" secondAttribute="bottom" constant="30" id="G2T-DY-z54"/>
+                            <constraint firstItem="uVl-qh-puF" firstAttribute="trailing" secondItem="Hc8-xg-B67" secondAttribute="trailing" id="Hme-72-WWy"/>
                             <constraint firstItem="h0W-xz-8b0" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="Iiw-0H-U6i"/>
                             <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="n0h-oW-Exb" secondAttribute="trailing" constant="16" id="NzJ-0E-gpT"/>
+                            <constraint firstItem="uVl-qh-puF" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" id="VGj-sz-v2G"/>
                             <constraint firstItem="M2w-Q0-H2V" firstAttribute="top" secondItem="n0h-oW-Exb" secondAttribute="bottom" constant="4" id="Ym4-LP-k9K"/>
+                            <constraint firstItem="uVl-qh-puF" firstAttribute="bottom" secondItem="Hc8-xg-B67" secondAttribute="bottom" id="bCD-g3-zDH"/>
+                            <constraint firstItem="zFw-AR-NOQ" firstAttribute="centerY" secondItem="uVl-qh-puF" secondAttribute="centerY" id="bTg-FV-ims"/>
                             <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="M2w-Q0-H2V" secondAttribute="trailing" constant="16" id="bzE-bn-GFn"/>
                             <constraint firstItem="n0h-oW-Exb" firstAttribute="top" secondItem="h0W-xz-8b0" secondAttribute="bottom" constant="4" id="m9D-Zw-cKa"/>
+                            <constraint firstItem="zFw-AR-NOQ" firstAttribute="centerX" secondItem="uVl-qh-puF" secondAttribute="centerX" id="pTm-Zs-Ghm"/>
                             <constraint firstItem="h0W-xz-8b0" firstAttribute="top" secondItem="Hc8-xg-B67" secondAttribute="top" constant="20" id="usU-Xg-Eur"/>
                             <constraint firstItem="n0h-oW-Exb" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="xSR-kp-gCZ"/>
                         </constraints>
@@ -244,15 +262,17 @@
                         <outlet property="lbBrand" destination="h0W-xz-8b0" id="kxf-UO-tZ5"/>
                         <outlet property="lbGasType" destination="n0h-oW-Exb" id="Vf0-jU-vUd"/>
                         <outlet property="lbPrice" destination="M2w-Q0-H2V" id="8V9-yK-eSK"/>
+                        <outlet property="loading" destination="zFw-AR-NOQ" id="NWs-ZN-h91"/>
+                        <outlet property="webView" destination="uVl-qh-puF" id="E99-um-te5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUJ-h6-dXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="687"/>
+            <point key="canvasLocation" x="1293.5999999999999" y="686.80659670164926"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Unn-qu-cRI"/>
+        <segue reference="kKk-qI-2Ya"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="main">

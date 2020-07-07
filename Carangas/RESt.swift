@@ -41,7 +41,7 @@ class RESt {
     private static let session = URLSession(configuration: configuration)
     
     class func loadBrands(onComplete: @escaping ([Brand]?) -> Void) {
-        guard let url = URL(string: "http://fipeapi.appspot.com/api/1/carros/marcas.json") else {
+        guard let url = URL(string: "https://fipeapi.appspot.com/api/1/carros/marcas.json") else {
             onComplete(nil)
             return
         }
